@@ -103,7 +103,6 @@ if st.button('問題'):
 answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
-    index=None,
     horizontal=True
 )
   
