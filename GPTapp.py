@@ -22,8 +22,6 @@ st.title("■■■ クイズのコーナー 3 ■■■")
 
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
-else:
-    st.session_state['counter'] += 1
 
 msg="AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 st.write(msg,st.session_state['counter'])
@@ -105,6 +103,7 @@ if st.session_state['counter']%2==0 and st.button('問題'):
     st.write(b[i])
   msg="-----------------------------------------------------"
   st.write(msg)
+  st.session_state['counter'] += 1
 
 if st.session_state['counter']%2==1 and st.button('答え'):
   msg="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
@@ -134,4 +133,5 @@ if st.session_state['counter']%2==1 and st.button('答え'):
 
   except:
       st.write('まず「問題」を押してください')
+  st.session_state['counter'] += 1
 
