@@ -139,7 +139,7 @@ answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
     horizontal=True,
-    indec=None,
+    index=None,
     on_change=ANS
 )
 
