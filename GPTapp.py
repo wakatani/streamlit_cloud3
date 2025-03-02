@@ -22,6 +22,8 @@ st.title("■■■ クイズのコーナー 3 ■■■")
 
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
+else:
+    st.session_state['counter'] += 1
 
 #
 # 問題作成の元になる文章群
@@ -45,7 +47,6 @@ if st.session_state['counter']%2==0 and st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
-  st.session_state['counter'] += 1
 
   explanation=explanationList[int(random.random()*len(explanationList))]
 
