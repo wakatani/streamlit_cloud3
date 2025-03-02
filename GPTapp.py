@@ -112,7 +112,7 @@ if st.button('答え'):
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
   
-    if answer==quiz_response["答え"]:
+    if int(answer)==int(quiz_response["答え"]):
       st.write("正解でした")
     else:
       st.write("間違いでした")
