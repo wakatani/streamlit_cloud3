@@ -18,7 +18,7 @@ client = OpenAI()
 
 #
 
-st.title("■■■ クイズのコーナー ■■■")
+st.title("■■■ クイズのコーナー 3 ■■■")
 
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
