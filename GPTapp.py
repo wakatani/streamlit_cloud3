@@ -100,13 +100,6 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-answer= st.radio(
-    "Your answer is ",
-    ["１", "２", "３", "４"],
-    horizontal=True,
-    on_change=ANS
-)
-
 def ANS():
   try:
     quiz_response=st.session_state['quiz']
@@ -137,6 +130,15 @@ def ANS():
 
   except:
       st.write('まず「問題」を押してください')
+
+answer= st.radio(
+    "Your answer is ",
+    ["１", "２", "３", "４"],
+    horizontal=True,
+    on_change=ANS
+)
+
+
 
 xx=1  
 if xx==0 and st.button('答え'):
