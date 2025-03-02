@@ -18,13 +18,7 @@ client = OpenAI()
 
 #
 
-st.title("■■■ クイズのコーナー 3 ■■■")
-
-if 'counter' not in st.session_state:
-  st.session_state['counter'] = 0
-
-msg="AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-st.write(msg,st.session_state['counter'])
+st.title("■■■ クイズのコーナー ■■■")
 
 #
 # 問題作成の元になる文章群
@@ -44,12 +38,14 @@ b=["","","",""]
 ans=""
 expl=""
 
-if st.session_state['counter']%2==0 and st.button('問題'):
-  msg="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  st.write(msg,st.session_state['counter'])
+if 'counter' not in st.session_state:
+  st.session_state['counter'] = 0
+
+if st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
+  st.session_state['counter'] += 1
 
   explanation=explanationList[int(random.random()*len(explanationList))]
 
@@ -103,11 +99,8 @@ if st.session_state['counter']%2==0 and st.button('問題'):
     st.write(b[i])
   msg="-----------------------------------------------------"
   st.write(msg)
-  st.session_state['counter'] += 1
 
-if st.session_state['counter']%2==1 and st.button('答え'):
-  msg="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  st.write(msg,st.session_state['counter'])
+if st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
@@ -133,5 +126,7 @@ if st.session_state['counter']%2==1 and st.button('答え'):
 
   except:
       st.write('まず「問題」を押してください')
-  st.session_state['counter'] += 1
+
+
+
 
