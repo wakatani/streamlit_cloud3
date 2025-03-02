@@ -108,15 +108,16 @@ answer= st.radio(
 )
   
 if st.button('答え'):
-  if answer==quiz_response["答え"]:
-    st.write("正解でした")
-  else:
-    st.write("間違いでした")
-  st.write("--------------")
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
   
+    if answer==quiz_response["答え"]:
+      st.write("正解でした")
+    else:
+      st.write("間違いでした")
+    st.write("--------------")
+      
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
