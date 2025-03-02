@@ -100,6 +100,13 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
+answer= st.radio(
+    "Your answer is ",
+    ["１", "２", "３", "４"],
+    index=None,
+    horizontal=True
+)
+  
 if st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
