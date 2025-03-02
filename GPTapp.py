@@ -140,13 +140,9 @@ answer= st.radio(
     ["１", "２", "３", "４"],
     horizontal=True,
     index=None,
-    on_change=ANS
 )
 
-
-
-xx=1  
-if xx==0 and st.button('答え'):
+if st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
