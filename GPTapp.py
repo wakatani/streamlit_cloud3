@@ -104,6 +104,10 @@ def ANS():
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
+
+    st.write("Your answer is ",int(answer))
+    st.write("Real answer is ",int(quiz_response["答え"]))
+                 
   
     if int(answer)==int(quiz_response["答え"]):
       st.write("正解でした")
