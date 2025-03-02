@@ -25,6 +25,9 @@ if 'counter' not in st.session_state:
 else:
     st.session_state['counter'] += 1
 
+msg="AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+st.write(msg,st.session_state['counter'])
+
 #
 # 問題作成の元になる文章群
 #
