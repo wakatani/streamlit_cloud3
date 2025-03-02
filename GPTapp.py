@@ -44,6 +44,8 @@ ans=""
 expl=""
 
 if st.session_state['counter']%2==0 and st.button('問題'):
+  msg="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  st.write(msg,st.session_state['counter'])
 #
 # 文章群から文章をランダムに選ぶ
 #
@@ -102,6 +104,8 @@ if st.session_state['counter']%2==0 and st.button('問題'):
   st.write(msg)
 
 if st.session_state['counter']%2==1 and st.button('答え'):
+  msg="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  st.write(msg,st.session_state['counter'])
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
