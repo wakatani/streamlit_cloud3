@@ -11,11 +11,17 @@ import streamlit as st
 
 #load_dotenv()
 
+#
+# APIキーは環境変数にセットしておく
+#
 client = OpenAI()
 
 #
 
 st.title("■■■ クイズのコーナー ■■■")
+
+if 'counter' not in st.session_state:
+  st.session_state['counter'] = 0
 
 #
 # 問題作成の元になる文章群
@@ -35,10 +41,7 @@ b=["","","",""]
 ans=""
 expl=""
 
-if 'counter' not in st.session_state:
-  st.session_state['counter'] = 0
-
-if st.button('問題'):
+if st.session_state['counter']%2==0 and st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
@@ -97,7 +100,7 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
-if st.button('答え'):
+if st.session_state['counter']%2==1 and st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
