@@ -124,9 +124,7 @@ if st.button('答え'):
     b[3]="４：{0}".format(quiz_response["選択肢４"])
     ans ="答えは{0}です。".format(quiz_response["答え"])
     expl="  [ {0} ]".format(explanation)
-  
-    st.write(ans)
-    st.write(expl)
+    st.write(ans,expl)
     counter=st.session_state['counter']
     msg="-----------------------------------------------------{0}".format(counter)
     st.write(msg)
