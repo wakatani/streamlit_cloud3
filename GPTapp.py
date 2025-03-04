@@ -167,7 +167,7 @@ if st.button('答え'):
     expl="  [ {0} ]".format(explanation)
     st.write(ans,expl)
     counter=st.session_state['counter']
-    msg="-----------------------------------------------------{0}".format(counter)
+    msg="-----------------------------------------------------"
     st.write(msg)
     for i in range(4):
       st.write(b[i])
