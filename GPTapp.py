@@ -32,10 +32,11 @@ def ANS():
   st.write("YYYY ",counter)
 
 answer= st.radio(
-    "Your answer is ",
-    ["１", "２", "３", "４"],
-    horizontal=True,
-    index=None,
+  "Your answer is ",
+  ["１", "２", "３", "４"],
+  horizontal=True,
+  index=None,
+  on_change=ANS,
 )
 
 if st.button('答え'):
