@@ -41,12 +41,12 @@ expl=""
 if 'counter' not in st.session_state:
   st.session_state['counter'] = 0
 
-if st.button('問題'):
+counter=st.session_state['counter']
+
+if counter%2==0 and st.button('問題'):
 #
 # 文章群から文章をランダムに選ぶ
 #
-  st.session_state['counter'] += 1
-
   explanation=explanationList[int(random.random()*len(explanationList))]
 
   response1 = client.chat.completions.create(
@@ -100,6 +100,9 @@ if st.button('問題'):
   msg="-----------------------------------------------------"
   st.write(msg)
 
+  st.session_state['counter'] += 1
+
+
 def ANS():
   try:
     quiz_response=st.session_state['quiz']
@@ -132,17 +135,40 @@ def ANS():
     msg="◇◇◇ 次の問題は「問題」を押してください"
     st.write(msg)
 
+    st.session_state['counter'] += 1
+    
   except:
-      st.write('まず「問題」を押してください')
+    st.write('まず「問題」を押してください')
 
-answer= st.radio(
+if counter%2==1:      
+  answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
     horizontal=True,
     index=None,
-)
+    on_change=ANS,
+  )
+  msg=quiz_response
+  b[0]="１：{0}".format(quiz_response["選択肢１"])
+  b[1]="２：{0}".format(quiz_response["選択肢２"])
+  b[2]="３：{0}".format(quiz_response["選択肢３"])
+  b[3]="４：{0}".format(quiz_response["選択肢４"])
+  ans ="答えは{0}です。".format(quiz_response["答え"])
+  expl="  [ {0} ]".format(explanation)
 
-if st.button('答え'):
+  counter=st.session_state['counter']
+  msg="-----------------------------------------------------{0}".format(counter)
+  st.write(msg)
+  msg="次の選択肢から正しいものを選べ"
+  st.write(msg)
+  for i in range(4):
+    st.write(b[i])
+  msg="-----------------------------------------------------"
+  st.write(msg)
+
+  
+xx=1  
+if xx==0 and st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
