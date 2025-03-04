@@ -43,7 +43,7 @@ if 'counter' not in st.session_state:
 
 counter=st.session_state['counter']
 
-if counter%2==0 and st.button('問題'):
+if st.button('問題'):
   print("XXXX ",counter)
 #
 # 文章群から文章をランダムに選ぶ
@@ -141,38 +141,14 @@ def ANS():
   except:
     st.write('まず「問題」を押してください')
 
-if counter%2==1:      
-  print("YYYY ",counter)
-  answer= st.radio(
+answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
     horizontal=True,
     index=None,
-    on_change=ANS,
-  )
-  quiz_response=st.session_state['quiz']
-  explanation=st.session_state['expl']
-  msg=quiz_response
-  b[0]="１：{0}".format(quiz_response["選択肢１"])
-  b[1]="２：{0}".format(quiz_response["選択肢２"])
-  b[2]="３：{0}".format(quiz_response["選択肢３"])
-  b[3]="４：{0}".format(quiz_response["選択肢４"])
-  ans ="答えは{0}です。".format(quiz_response["答え"])
-  expl="  [ {0} ]".format(explanation)
+)
 
-  counter=st.session_state['counter']
-  msg="-----------------------------------------------------{0}".format(counter)
-  st.write(msg)
-  msg="次の選択肢から正しいものを選べ"
-  st.write(msg)
-  for i in range(4):
-    st.write(b[i])
-  msg="-----------------------------------------------------"
-  st.write(msg)
-
-  
-xx=1  
-if xx==0 and st.button('答え'):
+if st.button('答え'):
   try:
     quiz_response=st.session_state['quiz']
     explanation=st.session_state['expl']
