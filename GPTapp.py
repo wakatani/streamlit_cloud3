@@ -27,6 +27,7 @@ counter=st.session_state['counter']
 
 if st.button('問題'):
   st.write("XXXX ",counter)
+  st.session_state['counter'] += 1
 
 def ANS():
   st.write("YYYY ",counter)
@@ -41,8 +42,10 @@ answer= st.radio(
 
 if st.button('答え'):
   st.write("ZZZZ ",counter)
+  st.session_state['counter'] += 1
 
-st.session_state['counter'] += 1
+
+  
 
 
 
