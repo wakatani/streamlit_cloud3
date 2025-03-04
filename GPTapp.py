@@ -44,6 +44,7 @@ if 'counter' not in st.session_state:
 counter=st.session_state['counter']
 
 if counter%2==0 and st.button('問題'):
+  print("XXXX ",counter)
 #
 # 文章群から文章をランダムに選ぶ
 #
@@ -141,6 +142,7 @@ def ANS():
     st.write('まず「問題」を押してください')
 
 if counter%2==1:      
+  print("YYYY ",counter)
   answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
@@ -148,6 +150,8 @@ if counter%2==1:
     index=None,
     on_change=ANS,
   )
+  quiz_response=st.session_state['quiz']
+  explanation=st.session_state['expl']
   msg=quiz_response
   b[0]="１：{0}".format(quiz_response["選択肢１"])
   b[1]="２：{0}".format(quiz_response["選択肢２"])
