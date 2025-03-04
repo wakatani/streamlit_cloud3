@@ -25,7 +25,7 @@ if 'counter' not in st.session_state:
 
 counter=st.session_state['counter']
 
-if st.button('問題'):
+if counter%2==0 and st.button('問題'):
   st.write("XXXX ",counter)
   st.session_state['counter'] += 1
 
@@ -40,7 +40,7 @@ answer= st.radio(
   on_change=ANS,
 )
 
-if st.button('答え'):
+if counter%2 ==1 and st.button('答え'):
   st.write("ZZZZ ",counter)
   st.session_state['counter'] += 1
 
