@@ -32,13 +32,14 @@ if counter%2==0 and st.button('問題'):
 def ANS():
   st.write("YYYY ",counter)
 
-if (answer= st.radio(
+answer= st.radio(
   "Your answer is ",
   ["１", "２", "３", "４"],
   horizontal=True,
   index=None,
   #on_change=ANS,
-)!= None):
+)
+if answer!=None:
   st.write("QQQQ ",counter, "answer= ",answer)
 
 if counter%2 ==1 and st.button('答え'):
