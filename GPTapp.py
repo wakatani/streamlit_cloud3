@@ -28,11 +28,8 @@ if 'counter' not in st.session_state:
 
 counter=st.session_state['counter']
 
-if counter==0:
+if counter%2==0:
   printQ(counter)
-  st.session_state['counter']+=1
-
-elif counter%2==1:
   answer= st.radio(
     "Your answer is ",
     ["１", "２", "３", "４"],
