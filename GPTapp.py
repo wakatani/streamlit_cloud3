@@ -18,6 +18,9 @@ client = OpenAI()
 
 #
 
+def printQ(c):
+  print("Q[",c,"]: ","ABCDEFG")
+
 st.title("■■■ クイズのコーナー ■■■")
 
 if 'counter' not in st.session_state:
@@ -25,26 +28,29 @@ if 'counter' not in st.session_state:
 
 counter=st.session_state['counter']
 
-if st.button('問題'):
-  st.write("XXXX ",counter)
-  st.session_state['counter'] += 1
+if counter==0:
+  print(counter)
+  st.session_state['counter']+=1
 
-def ANS():
-  st.write("YYYY ",counter)
+elif counter%2==1:
+  answer= st.radio(
+    "Your answer is ",
+    ["１", "２", "３", "４"],
+    horizontal=True,
+    index=None,
+    #on_change=ANS,
+  )
+  if st.button('答え'):
+    st.write("ZZZZ ",counter,"answer: ",answer)
+    st.session_state['counter'] += 1
 
-answer= st.radio(
-  "Your answer is ",
-  ["１", "２", "３", "４"],
-  horizontal=True,
-  index=None,
-  #on_change=ANS,
-)
-#if answer!=None:
-#  st.write("QQQQ ",counter, "answer= ",answer)
+else:  
+  if st.button('問題'):
+    print(counter)
+    st.session_state['counter'] += 1
 
-if st.button('答え'):
-  st.write("ZZZZ ",counter)
-  st.session_state['counter'] += 1
+
+
 
 
   
