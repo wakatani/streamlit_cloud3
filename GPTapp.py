@@ -29,7 +29,7 @@ if 'counter' not in st.session_state:
 counter=st.session_state['counter']
 
 if counter==0:
-  print(counter)
+  printQ(counter)
   st.session_state['counter']+=1
 
 elif counter%2==1:
@@ -46,7 +46,7 @@ elif counter%2==1:
 
 else:  
   if st.button('問題'):
-    print(counter)
+    printQ(counter)
     st.session_state['counter'] += 1
 
 
