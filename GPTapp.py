@@ -38,7 +38,7 @@ if (answer= st.radio(
   horizontal=True,
   index=None,
   #on_change=ANS,
-)):
+)!= None):
   st.write("QQQQ ",counter, "answer= ",answer)
 
 if counter%2 ==1 and st.button('答え'):
