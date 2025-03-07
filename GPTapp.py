@@ -19,7 +19,7 @@ client = OpenAI()
 #
 
 def printQ(c):
-  print("Q[",c,"]: ","ABCDEFG")
+  st.write("Q[",c,"]: ","ABCDEFG")
 
 st.title("■■■ クイズのコーナー ■■■")
 
