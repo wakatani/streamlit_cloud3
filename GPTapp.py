@@ -132,7 +132,7 @@ def ANS():
     counter=st.session_state['counter']
 #    msg="-----------------------------------------------------{0}".format(counter)
 #    st.write(msg)
-    for i in range(4):
+#    for i in range(4):
 #      st.write(b[i])
 #    msg="-----------------------------------------------------"
 #    st.write(msg)
