@@ -135,7 +135,7 @@ def ANS():
     for i in range(4):
 #      st.write(b[i])
 #    msg="-----------------------------------------------------"
-    st.write(msg)
+#    st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください"
     st.write(msg)
 
