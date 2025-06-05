@@ -20,6 +20,15 @@ client = OpenAI()
 
 st.title("■■■ クイズのコーナー1 ■■■")
 
+lang = st.radio(label='言語選択 (language)',
+                 options=('Japanese', 'English'),
+                 index=0,
+                 horizontal=True,
+)
+if lang=="Japanese":
+  language="日本語"
+else:
+  language="英語"
 #
 # 問題作成の元になる文章群
 #
@@ -57,7 +66,7 @@ if st.button('問題'):
       {"role": "system",\
                "content":"あなたはクイズ出題者です。知っている知識を駆使して問題を作ります。"},
       {"role": "user",\
-               "content": "「{0}」の文章に関する4択問題の4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。正解の選択肢以外の選択肢の文言は間違っているようにすること。正解の選択肢の番号はランダムにすること。".format(explanation)}],
+               "content": "「{0}」の文章に関する4択問題の4個の選択肢の文言とその答の番号を示せ。選択肢の文言は選択肢の番号は不要である。正解の選択肢以外の選択肢の文言は間違っているようにすること。正解の選択肢の番号はランダムにすること。言語は{1}で。".format(explanation,language)}],
     response_format={
         "type": "json_schema",
         "json_schema": {
