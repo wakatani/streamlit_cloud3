@@ -170,12 +170,12 @@ if st.button('答え'):
     expl="  [ {0} ]".format(explanation)
     st.write(ans,expl)
     counter=st.session_state['counter']
-    msg="-----------------------------------------------------"
-    st.write(msg)
-    for i in range(4):
-      st.write(b[i])
-    msg="-----------------------------------------------------"
-    st.write(msg)
+#    msg="-----------------------------------------------------"
+#    st.write(msg)
+#    for i in range(4):
+#      st.write(b[i])
+#    msg="-----------------------------------------------------"
+#    st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください"
     st.write(msg)
 
