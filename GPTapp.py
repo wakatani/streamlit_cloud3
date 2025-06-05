@@ -121,7 +121,7 @@ def ANS():
     else:
       st.write("間違いでした")
     st.write("--------------")
-      
+
     b[0]="１：{0}".format(quiz_response["選択肢１"])
     b[1]="２：{0}".format(quiz_response["選択肢２"])
     b[2]="３：{0}".format(quiz_response["選択肢３"])
@@ -130,11 +130,11 @@ def ANS():
     expl="  [ {0} ]".format(explanation)
     st.write(ans,expl)
     counter=st.session_state['counter']
-    msg="-----------------------------------------------------{0}".format(counter)
-    st.write(msg)
+#    msg="-----------------------------------------------------{0}".format(counter)
+#    st.write(msg)
     for i in range(4):
-      st.write(b[i])
-    msg="-----------------------------------------------------"
+#      st.write(b[i])
+#    msg="-----------------------------------------------------"
     st.write(msg)
     msg="◇◇◇ 次の問題は「問題」を押してください"
     st.write(msg)
